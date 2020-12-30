@@ -1,6 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  buttonsContainer: {
+    position: 'absolute',
+    bottom: 50,
+    width: "100%"
+  },
+
   carContainer: {
     height: "100%",
     width: "100%"
@@ -27,6 +33,10 @@ const styles = StyleSheet.create({
   subTitle: {
     fontSize: 18,
     color: "#101010"
+  },
+
+  subtitleCTA: {
+    textDecorationLine: 'underline',
   }
 });
 

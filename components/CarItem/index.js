@@ -5,32 +5,39 @@ import StyledButton from "../StyledButton";
 import styles from "./styles";
 
 const CarItem = (props) => {
+
+  const { name, tagline, taglineCTA, image } = props;
   return (
     <View style={styles.carContainer}>
       <ImageBackground
         style={styles.image}
-        source={require("../../assets/ModelX.jpeg")}
+        source={image}
       />
 
       <View style={styles.titles}>
-        <Text style={styles.title}>Model S</Text>
-        <Text style={styles.subTitle}>Starting at ₹1.50 Cr</Text>
+        <Text style={styles.title}>{name}</Text>
+        <Text style={styles.subTitle}>{tagline}
+          {' '}
+          <Text style={styles.subtitleCTA}>{taglineCTA}</Text>
+        </Text>
       </View>
 
-      <StyledButton
-        type="primary"
-        content={"Custom Order"}
-        onPress={() => {
-          console.warn("Custom Order Pressed");
-        }}
-      />
+      <View style={styles.buttonsContainer}>
+        <StyledButton
+          type="primary"
+          content={"Custom Order"}
+          onPress={() => {
+            console.warn("Custom Order Pressed");
+          }}
+        />
 
-      <StyledButton
-        content={"Existing Inventory"}
-        onPress={() => {
-          console.warn("Existing Inventory Pressed");
-        }}
-      />
+        <StyledButton
+          content={"Existing Inventory"}
+          onPress={() => {
+            console.warn("Existing Inventory Pressed");
+          }}
+        />
+      </View>
     </View>
   );
 };
